@@ -112,15 +112,15 @@ y_hat(:,1) = C*X_hat;
 
 X(:,1)=zeros(1,12);
 
-for i = 2:length(t)
-    u= .5*ones(4,1);
+%for i = 2:length(t)
+ %   u= .5*ones(4,1);
     
-    X(:,i) = X(:,i-1)  +dt * (A*X(:,i-1) + B*u);
-    y(:,i) = C*X(:,i) + sqrt(R)*randn(size(C,1),1);
+%    X(:,i) = X(:,i-1)  +dt * (A*X(:,i-1) + B*u);
+%    y(:,i) = C*X(:,i) + sqrt(R)*randn(size(C,1),1);
 
-    X_hat(:,i) = X_hat(:,i-1)  +dt * (A*X_hat(:,i-1) + B*u +L *(y(:,i-1)-y_hat(:,i-1)));
-    y_hat(:,i) = C*X_hat(:,i) ;
-end
+%    X_hat(:,i) = X_hat(:,i-1)  +dt * (A*X_hat(:,i-1) + B*u +L *(y(:,i-1)-y_hat(:,i-1)));
+%    y_hat(:,i) = C*X_hat(:,i) ;
+%end
 
 % Block of code for simulate LQG
 X(:,1)=[0 0 0 0 0 0 0 0 0 0 0 0]';
